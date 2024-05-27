@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do Task List</title>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <div class="wrapper">
-      <div class="task-input">
-        <img src="bars-icon.png" alt="icon">
-        <input type="text" placeholder="Add a new task">
-      </div>
-      <div class="controls">
-        <div class="filters">
-          <span class="active" id="all">All</span>
-          <span id="pending">Pending</span>
-          <span id="completed">Completed</span>
+        <div class="task-input">
+            <img src="bars-icon.png" alt="icon">
+            <input type="text" id="task-input" placeholder="Add a new task">
         </div>
-        <button class="clear-btn">Clear All</button>
-      </div>
-      <ul class="task-box"></ul>
+        <div class="controls">
+            <div class="filters">
+                <span class="active" id="all">All</span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+                <span id="high-priority">High Priority</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+            <button class="export-btn">Export to Excel</button>
+        </div>
+        <div class="additional-inputs">
+            <select id="priority">
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <input type="date" id="due-date">
+        </div>
+        <ul class="task-box"></ul>
     </div>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

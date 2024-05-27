@@ -17,9 +17,9 @@ body{
   background: #3C87FF;
 }
 .wrapper{
-  max-width: 405px;
+  max-width: 850px;
   padding: 28px 0 30px;
-  margin: 137px auto;
+  margin: 80px auto;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -28,30 +28,42 @@ body{
   height: 52px;
   padding: 0 25px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .task-input img{
-  top: 50%;
   position: absolute;
   height: 25px;
-  transform: translate(17px, -50%);
+  left: 20px;
 }
-.task-input input{
+.task-input input[type="text"]{
+  flex: 1;
   height: 100%;
-  width: 100%;
   outline: none;
   font-size: 18px;
   border-radius: 5px;
-  padding: 0 20px 0 53px;
+  padding: 0 20px 0 50px;
   border: 1px solid #999;
 }
-.task-input input:focus,
-.task-input input.active{
-  padding-left: 52px;
+.task-input input[type="text"]:focus,
+.task-input input[type="text"].active{
   border: 2px solid #3C87FF;
 }
 .task-input input::placeholder{
   color: #bfbfbf;
 }
+.task-input select, .task-input input[type="date"]{
+  margin-left: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 0 10px;
+  height: 100%;
+}
+.task-input select:focus, .task-input input[type="date"]:focus{
+  border: 2px solid #3C87FF;
+}
+
 .controls, li{
   display: flex;
   align-items: center;
@@ -73,7 +85,8 @@ body{
 .filters span.active{
   color: #3C87FF;
 }
-.controls .clear-btn{
+.controls .clear-btn,
+.controls .export-btn{
   border: none;
   opacity: 0.6;
   outline: none;
@@ -87,11 +100,11 @@ body{
   transition: transform 0.25s ease;
   background: linear-gradient(135deg, #1798fb 0%, #2D5CFE 100%);
 }
-.clear-btn.active{
+.clear-btn.active, .export-btn.active{
   opacity: 0.9;
   pointer-events: auto;
 }
-.clear-btn:active{
+.clear-btn:active, .export-btn:active{
   transform: scale(0.93);
 }
 .task-box{
@@ -189,6 +202,24 @@ body{
 }
 .settings li i{
   padding-right: 8px;
+}
+
+.priority-low {
+  border-left: 5px solid #4CAF50;
+}
+
+.priority-medium {
+  border-left: 5px solid #FF9800;
+}
+
+.priority-high {
+  border-left: 5px solid #F44336;
+}
+
+.task label span {
+  margin-left: 12px;
+  font-size: 14px;
+  color: #666;
 }
 
 @media (max-width: 400px) {
